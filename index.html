@@ -64,6 +64,13 @@
 			color: #FF4081;
 		}
 
+		#novios {
+			display: none;
+			font-size: 1.8em;
+			margin-top: 20px;
+			color: #FF4081;
+		}
+
 		#imagen {
 			display: none;
 			margin-top: 20px;
@@ -93,6 +100,10 @@
 				font-size: 1.8em;
 			}
 
+			#novios {
+				font-size: 2em;
+			}
+
 			#imagen {
 				max-width: 300px;
 			}
@@ -110,12 +121,15 @@
 		
 		function si() {
 			var mensaje = document.getElementById("mensaje");
+			var novios = document.getElementById("novios");
 			var imagen = document.getElementById("imagen");
 			
 			mensaje.style.display = "block";
+			novios.style.display = "block";
 			imagen.style.display = "block";
 			
 			mensaje.textContent = "¡Sabía que dirías que sí! ❤️";
+			novios.textContent = "¡Ya somos novios!";
 		}
 		
 		function mueveboton() {
@@ -143,6 +157,7 @@
 	<input type="button" id="btnsi" value="¿Sí?">
 	<input type="button" id="btnno" value="¿No?">
 
+	<p id="novios"></p> <!-- Mensaje que aparece cuando se confirma la relación -->
 	<img id="imagen" src="amor.jpg" alt="Imagen Adorable">
 	<p id="mensaje"></p>
 </body>
