@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Inicio</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+		body {
+			background-color: #FFC0CB;	
+			text-align: center;
+			color: #333333;
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		
+		h1 {
+			font-size: 2em;
+			margin-bottom: 15px;
+			padding: 0 10px;
+		}
+		
+		p {
+			font-size: 1.1em;
+			margin-bottom: 20px;
+			padding: 0 10px;
+		}
+		
+		input {
+			width: 80px;
+			height: 40px;
+			font-size: 1em;
+			color: #FFFFFF;
+			background-color: #FF4081;
+			border: none;
+			border-radius: 20px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		input:hover {
+			background-color: #E91E63;
+		}
+		
+		#btnno {
+			margin-left: 10px;
+		}
+
+		#btnsi {
+			margin-right: 10px;
+		}
+
+		#mensaje {
+			display: none;
+			font-size: 1.5em;
+			margin-top: 20px;
+			color: #FF4081;
+		}
+
+		#imagen {
+			display: none;
+			margin-top: 20px;
+			max-width: 80%;
+			height: auto;
+		}
+
+		@media (min-width: 768px) {
+			h1 {
+				font-size: 2.5em;
+				margin-bottom: 20px;
+			}
+
+			p {
+				font-size: 1.2em;
+				margin-bottom: 30px;
+			}
+
+			input {
+				width: 120px;
+				height: 50px;
+				font-size: 1.1em;
+				border-radius: 25px;
+			}
+
+			#mensaje {
+				font-size: 1.8em;
+			}
+
+			#imagen {
+				max-width: 300px;
+			}
+		}
+	</style>
+	
+	<script>
+		function comenzar() {
+			var botonsi = document.getElementById("btnsi");
+			var botonno = document.getElementById("btnno");
+			
+			botonsi.addEventListener("click", si, false);
+			botonno.addEventListener("mouseover", mueveboton, false);
+		}
+		
+		function si() {
+			var mensaje = document.getElementById("mensaje");
+			var imagen = document.getElementById("imagen");
+			
+			mensaje.style.display = "block";
+			imagen.style.display = "block";
+			
+			mensaje.textContent = "¡Sabía que dirías que sí! ❤️";
+		}
+		
+		function mueveboton() {
+			width = window.innerWidth;
+			height = window.innerHeight;
+			
+			nuevowidth = (Math.random() * (width - 120)); // Ajuste para evitar que se salga de la pantalla
+			nuevoheight = (Math.random() * (height - 50));
+			
+			document.getElementById("btnno").style.position = "absolute";
+			document.getElementById("btnno").style.left = nuevowidth + "px";
+			document.getElementById("btnno").style.top = nuevoheight + "px";
+		}
+		
+		window.addEventListener("load", comenzar, false);
+	</script>
+	
+</head>
+
+<body>
+	<h1>Hola Quenia Bitalina Irigoin Carranza ❤️</h1>
+	<p>Hay algo que quiero decirte desde hace tiempo...</p>
+	<p>¡Te quiero mucho! ❤️ ¿Quieres ser mi novia?</p>
+	
+	<input type="button" id="btnsi" value="¿Sí?">
+	<input type="button" id="btnno" value="¿No?">
+
+	<img id="imagen" src="amor.jpg" alt="Imagen Adorable">
+	<p id="mensaje"></p>
+</body>
+</html>
